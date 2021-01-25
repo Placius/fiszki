@@ -5,8 +5,12 @@
 # git branch -M main     
 # git push -u origin main
 
-# import modules
-import menu, sys
+# import standard modules
+import sys
+
+# import my modules
+import menu
+import learn
 
 # general class
 
@@ -16,6 +20,7 @@ class Main:
         self.second_menu = menu.ChooseLanguageMenu()
         self.third_menu = menu.InsideLanguageMenu()
         self.actual_lessons_language = "polish"
+        self.lesson = "lesson"
     
     def Begin(self):
         while True:
@@ -39,9 +44,10 @@ class Main:
                     
                     if choice == 1 or choice == 2:
                         self.third_menu.ShowMenu()
-                        self.third_menu.Choices()
+                        choice = self.third_menu.Choices()
                         if choice == 1:
-                            pass
+                            self.lesson = learn.Learn(self.actual_lessons_language)
+                            self.lesson.StartLearn()
 
                         elif choice == 2:
                             pass
