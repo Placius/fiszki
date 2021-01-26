@@ -12,6 +12,7 @@ import sys
 import menu
 import learn
 import add_word
+import del_word
 
 # general class
 
@@ -58,7 +59,8 @@ class Main:
                             new_word.AddWord()
 
                         elif choice == 4:
-                            pass
+                            delete_word = del_word.DelWord(self.actual_lessons_language)
+                            delete_word.Delete()
 
                         elif choice == 5:
                             pass

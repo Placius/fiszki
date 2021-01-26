@@ -10,6 +10,9 @@ class NewWord:
         while True:
             os.system("cls")
             print("Jeśli chcesz powrócić do menu wprowadź komunikat 'elo' po czym wciśnij Enter.\n\n")
+            if self.lessons_language == "deutsch":
+                print("Przydatne znaki: ä  Ä  ö  Ö  ü  Ü  ß\n\n")
+
             self.new_alien_word = input("Wpisz nowe słówko: ")
             if self.new_alien_word == "elo":
                 break
