@@ -11,6 +11,7 @@ import sys
 # import my modules
 import menu
 import learn
+import add_word
 
 # general class
 
@@ -53,7 +54,8 @@ class Main:
                             pass
 
                         elif choice == 3:
-                            pass
+                            new_word = add_word.NewWord(self.actual_lessons_language)
+                            new_word.AddWord()
 
                         elif choice == 4:
                             pass
