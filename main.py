@@ -63,12 +63,6 @@ class Main:
                             delete_word.Delete()
 
                         elif choice == 5:
-                            pass
-
-                        elif choice == 6:
-                            pass
-
-                        elif choice == 7:
                             break
 
                         else:
