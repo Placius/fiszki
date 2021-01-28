@@ -5,12 +5,12 @@ class Segregator:
         self.alien_word = alien_word
     
     def AddToKnowWordsLists(self):
-        with open(str(self.lessons_language) + "/" + "know_words.txt", "r+", encoding='utf8') as file:
+        with open(str(self.lessons_language) + "/" + "know_words.txt", "a+", encoding='utf8') as file:
             file.write(self.alien_word + "\n")
             file.write(self.pl_word + "\n")
     
     def AddToHardWordsLists(self):
-        with open(str(self.lessons_language) + "/" + "hard_words.txt", "r+", encoding='utf8') as file:
+        with open(str(self.lessons_language) + "/" + "hard_words.txt", "a+", encoding='utf8') as file:
             file.write(self.alien_word + "\n")
             file.write(self.pl_word + "\n")
     

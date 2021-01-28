@@ -7,11 +7,34 @@ class DelWord:
         self.pl_words = []
         self.alien_words = []
         self.word_to_delete = "word"
-        lists = learn.Learn(self.lessons_language)
-        lists.DownloadWordsLists(self)
+        self.DownloadWordsLists()
+
+    def DownloadWordsLists(self):
+        alien_words = []
+        pl_words = []
+
+        # download alien words
+        with open(str(self.lessons_language) + "/" + "alien-words.txt", "r+", encoding='utf8') as file:
+            lines = file.read().split("\n")
+            for line in lines:
+                if len(line) > 0:
+                    alien_words.append(line)
+                else:
+                        continue
+
+        # download polish words
+        with open(str(self.lessons_language) + "/" + "pl-words.txt", "r+", encoding='utf8') as file:
+                lines = file.read().split("\n")
+                for line in lines:
+                    if len(line) > 0:
+                        pl_words.append(line)
+                    else:
+                        continue
+
+        self.alien_words = alien_words
+        self.pl_words = pl_words
 
     def Delete(self):
-        print(self.alien_words)
         print(("Jakie słówko chcesz usunąć?"))
         self.word_to_delete = input("Wprowadź słówko w języku polskim: ")
         if self.word_to_delete in self.pl_words:
@@ -35,3 +58,6 @@ class DelWord:
         else:
             print("Nie znaleziono słówka, sprawdź poprawność pisowni.")
             time.sleep(3)
+
+dele = DelWord("deutsch")
+dele.Delete()

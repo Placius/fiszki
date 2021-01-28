@@ -6,12 +6,11 @@ import os, sys, time
 class GeneralMenu:
     def __init__(self):
         self.welcome_message = "Cześć, jesteś gotowy na dzsiejszą naukę?"
-        self.choices = {1 : "Rozpocznij naukę", 2 : "Wybierz język menu", 3 : "Wyjście"}
-        self.actual_language = "PL"
+        self.choices = {1 : "Rozpocznij naukę", 2 : "Wyjście"}
     
     def ShowMenu(self):
         os.system("cls")
-        print(self.welcome_message, "\t\t\t", self.actual_language, "\n\n")
+        print(self.welcome_message,"\n\n")
         for key, value in self.choices.items():
             print(str(key), " - ", value)
     
@@ -43,7 +42,6 @@ class ChooseLanguageMenu(GeneralMenu):
     def __init__(self):
         self.welcome_message = "Który język na teraz?"
         self.choices = {1 : "Angielski", 2 : "Niemiecki", 3 : "Powrót do menu głównego", 4 : "Wyjście"}
-        self.actual_language = "PL"
 
 class InsideLanguageMenu(GeneralMenu):
     def __init__(self):

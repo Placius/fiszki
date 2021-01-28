@@ -10,8 +10,6 @@ class Learn:
         self.last_word = 0
         self.words_quantity = 0
         self.segregator_words = []
-
-        self.DownloadWordsLists()
     
     def DownloadWordsLists(self):
         alien_words = []
@@ -37,11 +35,13 @@ class Learn:
 
         self.alien_words = alien_words
         self.pl_words = pl_words
+
+        return self.pl_words
     
     def DownloadKnow_HardWordsLists(self, list):
         # download actual know words list
             lista = []
-            with open(str(self.lessons_language) + "/" + str(list) + ".txt", "r+", encoding='utf8') as file:
+            with open(str(self.lessons_language) + "/" + str(list) + ".txt", "r", encoding='utf8') as file:
                 lines = file.read().split("\n")
                 for line in lines:
                     if len(line) > 0:
@@ -51,6 +51,7 @@ class Learn:
             self.segregator_words = lista
 
     def StartLearn(self):
+        self.DownloadWordsLists()
         self.words_quantity = len(self.alien_words)
 
         
@@ -68,12 +69,20 @@ class Learn:
                 if self.alien_words[self.last_word] in self.segregator_words:
                     print("Słówko już znajduje sie w tej bazie.")
                     time.sleep(2)
+                    # change word index
+                    self.last_word += 1
+                    if self.last_word == self.words_quantity:
+                        self.last_word = 0
                 
                 else:
                     where = words_segreagtor.Segregator(self.lessons_language, self.pl_words[self.last_word], self.alien_words[self.last_word])
                     where.AddToHardWordsLists()
                     print("Słówko zostało dodane do listy 'Trudnych'")
                     time.sleep(2)
+                    # change word index
+                    self.last_word += 1
+                    if self.last_word == self.words_quantity:
+                        self.last_word = 0
 
             # add word to "I know these words list"
             elif choice == '2':
@@ -81,21 +90,27 @@ class Learn:
                 if self.alien_words[self.last_word] in self.segregator_words:
                     print("Słówko już znajduje sie w tej bazie.")
                     time.sleep(2)
+                    # change word index
+                    self.last_word += 1
+                    if self.last_word == self.words_quantity:
+                        self.last_word = 0
                 
                 else:
                     where = words_segreagtor.Segregator(self.lessons_language, self.pl_words[self.last_word], self.alien_words[self.last_word])
                     where.AddToKnowWordsLists()
                     print("Słówko zostało dodane do listy 'Znanych'")
                     time.sleep(2)
+                    # change word index
+                    self.last_word += 1
+                    if self.last_word == self.words_quantity:
+                        self.last_word = 0
 
             elif choice == '3':
                 break
             
             else:
+                # change word index
+                self.last_word += 1
+                if self.last_word == self.words_quantity:
+                    self.last_word = 0
                 continue
-            
-            # change word index
-            self.last_word += 1
-
-            if self.last_word == self.words_quantity:
-                self.last_word = 0
