@@ -7,10 +7,11 @@ class DelWord:
         self.pl_words = []
         self.alien_words = []
         self.word_to_delete = "word"
-        lists = learn.Learn
+        lists = learn.Learn(self.lessons_language)
         lists.DownloadWordsLists(self)
 
     def Delete(self):
+        print(self.alien_words)
         print(("Jakie słówko chcesz usunąć?"))
         self.word_to_delete = input("Wprowadź słówko w języku polskim: ")
         if self.word_to_delete in self.pl_words:
