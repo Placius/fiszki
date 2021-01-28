@@ -58,6 +58,3 @@ class DelWord:
         else:
             print("Nie znaleziono słówka, sprawdź poprawność pisowni.")
             time.sleep(3)
-
-dele = DelWord("deutsch")
-dele.Delete()

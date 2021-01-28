@@ -47,22 +47,35 @@ class Main:
                     if choice == 1 or choice == 2:
                         self.third_menu.ShowMenu()
                         choice = self.third_menu.Choices()
+                        self.lesson = learn.Learn(self.actual_lessons_language)
+                        # all words
                         if choice == 1:
-                            self.lesson = learn.Learn(self.actual_lessons_language)
-                            self.lesson.StartLearn()
+                            self.lesson.StartLearn("all")
 
+                        # hard words
                         elif choice == 2:
-                            pass
+                            self.lesson.StartLearn("hard_words")
 
+                        # I know thats words learn and repeat
                         elif choice == 3:
+                            self.lesson.StartLearn("know_words")
+                        
+                        # test
+                        elif choice == 4:
+                            pass
+                        
+                        # add new word
+                        elif choice == 5:
                             new_word = add_word.NewWord(self.actual_lessons_language)
                             new_word.AddWord()
 
-                        elif choice == 4:
+                        # del word
+                        elif choice == 6:
                             delete_word = del_word.DelWord(self.actual_lessons_language)
                             delete_word.Delete()
 
-                        elif choice == 5:
+                        # back to menu
+                        elif choice == 7:
                             break
 
                         else:

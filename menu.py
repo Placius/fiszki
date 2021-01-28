@@ -46,6 +46,6 @@ class ChooseLanguageMenu(GeneralMenu):
 class InsideLanguageMenu(GeneralMenu):
     def __init__(self):
         self.welcome_message = "Zaczynajmy!"
-        self.choices = {1 : "Fiszki - nauka", 2 : "Test - sprawdź się!", 3 : "Dodaj słówko", 4 : "Usuń słówko", 
-                        5 : "Powrót do menu", 6 : "Wyjście"}
+        self.choices = {1 : "Fiszki - nauka", 2 : "Fiszki - Trudne", 3 : "Fiszki - Zapamiętane", 4 : "Test - sprawdź się!", 5 : "Dodaj słówko", 6 : "Usuń słówko", 
+                        7 : "Powrót do menu", 8 : "Wyjście"}
         self.actual_language = "PL"
