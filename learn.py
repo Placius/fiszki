@@ -90,10 +90,10 @@ class Learn:
                     break
 
                 os.system('cls')
-                print("\t\t\t\t\t", self.alien_words[self.last_word], "\n")
+                print(self.alien_words[self.last_word], "\t\t\tAktualnie w bazie znajduse się", str(len(self.pl_words)), "słówek.\n")
                 input("Sprawdź --> Enter")
                 os.system('cls')
-                print("\t\t\t\t\t", self.alien_words[self.last_word], " <-> ", self.pl_words[self.last_word], "\n")
+                print(self.alien_words[self.last_word], " <-> ", self.pl_words[self.last_word], "\t\t\tAktualnie w bazie znajduse się", str(len(self.pl_words)), "słówek.\n")
                 choice = input("\nDalej --> Enter\nDodaj do 'Trudne' --> '1' + Enter\nDodaj do 'Zapamiętane' --> '2' + Enter\nPrzerwij naukę --> '3' + Enter\n-->  ")
 
                 # add word to "Hard words list"
