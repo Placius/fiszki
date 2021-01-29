@@ -2,3 +2,7 @@ kobieta
 mężczyzna
 kot
 pies
+dziecko
+dopóki
+jeżeli
+komputer

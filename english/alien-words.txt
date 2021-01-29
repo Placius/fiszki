@@ -2,3 +2,7 @@ woman
 man
 cat
 dog
+child
+while
+if
+Computer

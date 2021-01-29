@@ -13,6 +13,7 @@ import menu
 import learn
 import add_word
 import del_word
+import test
 
 # general class
 
@@ -62,8 +63,9 @@ class Main:
                         
                         # test
                         elif choice == 4:
-                            pass
-                        
+                            tes = test.Test(self.actual_lessons_language)
+                            tes.StartTest()
+                             
                         # add new word
                         elif choice == 5:
                             new_word = add_word.NewWord(self.actual_lessons_language)

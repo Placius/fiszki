@@ -1,2 +1,4 @@
 woman
 kobieta
+man
+mężczyzna
